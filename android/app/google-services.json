@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1040779624425",
+    "project_id": "dietafacil-bbc40",
+    "storage_bucket": "dietafacil-bbc40.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1040779624425:android:364e7dec7bd1fe49a89578",
+        "android_client_info": {
+          "package_name": "com.mycompany.dietafacil"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDv_qfhYGf8w2dKqd1qQ3jJUN9S2XnBWF0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
