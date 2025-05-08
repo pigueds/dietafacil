@@ -2,65 +2,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const enterButton = document.getElementById('enter-button');
     const mainContent = document.getElementById('main-content');
     const spinnerContainer = document.getElementById('spinner-container');
-    const userFacingUrl = 'https://dietafacil.fit'; // URL que o usuário vê
     const flutterFlowUrl = 'https://dietafacil.flutterflow.app'; // URL real do app
 
-    // Pré-carrega TODOS os recursos do FlutterFlow
-    function preloadApp() {
-        // 1. Pré-conecta aos domínios do FlutterFlow e dependências
-        const criticalDomains = [
-            flutterFlowUrl,
-            'https://www.gstatic.com',
-            'https://fonts.googleapis.com',
-            'https://fonts.gstatic.com'
-        ];
-        
-        criticalDomains.forEach(domain => {
-            const link = document.createElement('link');
-            link.rel = 'preconnect';
-            link.href = domain;
-            link.crossOrigin = 'anonymous';
-            document.head.appendChild(link);
-        });
+    // 1. Pré-carrega o FlutterFlow em segundo plano (iframe oculto)
+    const preloadIframe = document.createElement('iframe');
+    preloadIframe.src = flutterFlowUrl;
+    preloadIframe.style.display = 'none';
+    document.body.appendChild(preloadIframe);
 
-        // 2. Pré-carrega os recursos específicos do FlutterFlow
-        const flutterResources = [
-            '/main.dart.js',
-            '/assets/fonts/MaterialIcons-Regular.otf',
-            '/assets/splash/splash.js',
-            '/manifest.json'
-        ];
+    // 2. Configura o clique no botão ENTRAR
+    enterButton.addEventListener('click', () => {
+        // Mostra o spinner e esconde o conteúdo inicial
+        mainContent.style.display = 'none';
+        spinnerContainer.style.display = 'flex';
 
-        flutterResources.forEach(resource => {
-            const link = document.createElement('link');
-            link.rel = 'preload';
-            link.href = `${flutterFlowUrl}${resource}`;
-            link.as = resource.endsWith('.js') ? 'script' : 
-                      resource.endsWith('.otf') ? 'font' : 'fetch';
-            link.crossOrigin = 'anonymous';
-            document.head.appendChild(link);
-        });
+        // 3. Redireciona para o FlutterFlow após 300ms (tempo para ver o spinner)
+        setTimeout(() => {
+            window.location.href = flutterFlowUrl;
+        }, 300);
+    });
 
-        // 3. Iframe oculto com a URL REAL do FlutterFlow (mais eficaz)
-        const iframe = document.createElement('iframe');
-        iframe.src = flutterFlowUrl;
-        iframe.style.display = 'none';
-        document.body.appendChild(iframe);
-    }
-
-    // Inicia o pré-carregamento
-    preloadApp();
-
-    // Controle do botão ENTRAR
-    if (enterButton && mainContent && spinnerContainer) {
-        enterButton.addEventListener('click', () => {
-            mainContent.style.display = 'none';
-            spinnerContainer.style.display = 'flex';
-            
-            // Redireciona para a URL "limpa" (dietafacil.fit)
-            setTimeout(() => {
-                window.location.href = userFacingUrl;
-            }, 150);
-        });
-    }
+    // (Opcional) Monitora o pré-carregamento
+    preloadIframe.onload = () => {
+        console.log('App FlutterFlow pré-carregado!');
+    };
 });
