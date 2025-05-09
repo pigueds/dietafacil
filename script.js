@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const enterButton = document.getElementById('enter-button');
     const mainContent = document.getElementById('main-content');
     const spinnerContainer = document.getElementById('spinner-container');
-    const flutterFlowUrl = 'https://dietafacil.flutterflow.app'; // URL real do app
+    const flutterFlowUrl = 'https://app.dietafacil.fit'; // URL real do app
 
     // 1. Pré-carrega o FlutterFlow em segundo plano (iframe oculto)
     const preloadIframe = document.createElement('iframe');
