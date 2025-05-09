@@ -10,35 +10,35 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     color: #333;
     text-align: center;
-    padding: 20px; /* Adicionado para evitar colapso nas bordas em mobile */
+    padding: 20px;
     box-sizing: border-box;
 }
 
-/* Container principal responsivo */
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
-    max-width: 500px; /* Limita a largura em desktop */
+    max-width: 500px;
     padding: 20px;
 }
 
 /* Logo responsivo */
 .logo {
     width: 100%;
-    max-width: 200px; /* Tamanho máximo em desktop */
+    max-width: 200px;
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 25px; /* Aumentado para mobile */
 }
 
-/* Texto dinâmico com clamp() (melhor para responsividade) */
+/* TEXTO PRINCIPAL - AUMENTADO PARA MOBILE */
 .welcome-text {
-    font-size: clamp(1.2rem, 4vw, 1.5rem); /* Mínimo: 1.2rem, Ideal: 4% da tela, Máximo: 1.5rem */
+    font-size: clamp(1.5rem, 5vw, 2rem); /* Aumentei os valores para mobile */
     margin-bottom: 30px;
     color: #555;
     line-height: 1.4;
+    font-weight: 500; /* Mais legível */
 }
 
 /* Botão responsivo */
@@ -46,23 +46,24 @@ body {
     background-color: #8A2BE2;
     color: white;
     border: none;
-    padding: clamp(12px, 3vw, 15px) clamp(25px, 6vw, 30px); /* Padding responsivo */
-    font-size: clamp(1rem, 3vw, 1.1rem); /* Fonte responsiva */
+    padding: 15px 30px;
+    font-size: 1.2rem; /* Aumentado para mobile */
     font-weight: bold;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     width: 100%;
-    max-width: 250px; /* Largura máxima do botão */
+    max-width: 280px; /* Largura aumentada */
+    margin-top: 10px;
 }
 
 .enter-btn:hover {
     background-color: #7B1FA2;
 }
 
-/* Spinner (ajustes para mobile) */
+/* Spinner */
 .spinner-container {
-    display: flex;
+    display: none; /* Mantém oculto por padrão */
     align-items: center;
     justify-content: center;
     position: fixed;
@@ -88,24 +89,30 @@ body {
     100% { transform: rotate(360deg); }
 }
 
-/* Media Queries para ajustes específicos */
+/* MEDIA QUERIES ESPECÍFICAS PARA MOBILE */
 @media (max-width: 600px) {
     .logo {
-        max-width: 150px; /* Reduz um pouco o logo em mobile */
+        max-width: 180px; /* Logo um pouco maior */
+        margin-bottom: 30px;
     }
-
-    .spinner {
-        width: 50px;
-        height: 50px;
-        border-width: 6px;
+    
+    .welcome-text {
+        font-size: 1.8rem; /* Tamanho fixo maior em mobile */
+        margin-bottom: 35px;
+    }
+    
+    .enter-btn {
+        font-size: 1.3rem;
+        padding: 16px 32px;
+        max-width: 300px;
     }
 }
 
 @media (max-width: 400px) {
     .welcome-text {
-        font-size: 1.1rem; /* Tamanho mínimo garantido para telas muito pequenas */
+        font-size: 1.6rem; /* Ajuste para telas muito pequenas */
     }
     .enter-btn {
-        padding: 12px 20px;
+        font-size: 1.2rem;
     }
 }
