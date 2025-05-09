@@ -3,6 +3,15 @@
 <head>
     <title>Dieta Fácil</title>
     <link rel="stylesheet" href="style.css">
+<!-- Pré-conexão aos domínios críticos -->
+<link rel="preconnect" href="https://app.dietafacil.fit">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://www.gstatic.com">
+
+<!-- Pré-carregamento dos recursos principais do FlutterFlow -->
+<link rel="preload" href="https://app.dietafacil.fit/main.dart.js" as="script">
+<link rel="preload" href="https://app.dietafacil.fit/assets/fonts/MaterialIcons-Regular.otf" as="font" crossorigin>
+
 </head>
 <body>
     <!-- CONTEÚDO VISÍVEL -->
@@ -18,7 +27,11 @@
     </div>
 
     <!-- IFRAME OCULTO para pré-carregar -->
-    <iframe src="index_entrar.html" style="display:none;"></iframe>
+   <iframe 
+  src="https://app.dietafacil.fit" 
+  style="display: none; width: 0; height: 0; border: none;"
+  title="Pré-carregamento FlutterFlow"
+></iframe>
 
     <script src="script.js"></script>
 </body>
