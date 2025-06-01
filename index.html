@@ -2,35 +2,57 @@
 <html>
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FW1EPP2MQB"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-FW1EPP2MQB');
-</script>
-
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FW1EPP2MQB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FW1EPP2MQB');
+    </script>
     
-    <title>Dieta Fácil</title>
+    <title>Dieta Fácil - Seu Plano Alimentar Personalizado</title>
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Pré-conexão aos domínios críticos -->
-<link rel="preconnect" href="https://app.dietafacil.fit">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="dns-prefetch" href="https://www.gstatic.com">
+    <meta name="description" content="Crie sua dieta personalizada em minutos, baseada nos alimentos que você ama! Emagreça, mantenha ou ganhe peso sem nutricionista caro.">
+    
+    <!-- Pré-conexão aos domínios críticos -->
+    <link rel="preconnect" href="https://app.dietafacil.fit">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.gstatic.com">
 
-<!-- Pré-carregamento dos recursos principais do FlutterFlow -->
-<link rel="preload" href="https://app.dietafacil.fit/main.dart.js" as="script">
-<link rel="preload" href="https://app.dietafacil.fit/assets/fonts/MaterialIcons-Regular.otf" as="font" crossorigin>
-
+    <!-- Pré-carregamento dos recursos principais do FlutterFlow -->
+    <link rel="preload" href="https://app.dietafacil.fit/main.dart.js" as="script">
+    <link rel="preload" href="https://app.dietafacil.fit/assets/fonts/MaterialIcons-Regular.otf" as="font" crossorigin>
 </head>
 <body>
     <!-- CONTEÚDO VISÍVEL -->
     <div class="container" id="main-content">
-        <img src="LOGOdietafacil_semfundo.png" alt="Logo" class="logo">
-        <p class="welcome-text">Seja Bem-vindo(a)</p>
-        <button id="enter-button" class="enter-btn">ENTRAR</button>
+        <img src="LOGOdietafacil_semfundo.png" alt="Dieta Fácil - Seu Guia Alimentar Inteligente" class="logo">
+        
+        <h1 class="welcome-text">Sua Dieta Perfeita em 3 Passos</h1>
+        
+        <div class="benefits-box">
+            <div class="benefit-item">
+                <span class="benefit-icon">🍎</span>
+                <span class="benefit-text">Diga quais alimentos você <strong>ama</strong></span>
+            </div>
+            
+            <div class="benefit-item">
+                <span class="benefit-icon">🎯</span>
+                <span class="benefit-text">Escolha seu <strong>objetivo</strong></span>
+            </div>
+            
+            <div class="benefit-item">
+                <span class="benefit-icon">✨</span>
+                <span class="benefit-text">Receba seu plano <strong>personalizado</strong></span>
+            </div>
+        </div>
+        
+        <p class="cta-text">Sem nutricionista caro. Sem dietas genéricas. <strong>Só o que funciona para VOCÊ!</strong></p>
+        
+        <button id="enter-button" class="enter-btn">CRIAR MINHA DIETA AGORA →</button>
+        
+        <p class="small-text">+5.842 usuários transformaram seus hábitos</p>
     </div>
 
     <!-- SPINNER (inicialmente oculto) -->
@@ -39,9 +61,7 @@
     </div>
 
     <!-- IFRAME OCULTO para pré-carregar -->
-   <iframe 
-  src="https://app.dietafacil.fit" style="display: none; width: 0; height: 0; border: none;" title="Pré-carregamento FlutterFlow"
-></iframe>
+    <iframe src="https://app.dietafacil.fit" style="display: none; width: 0; height: 0; border: none;" title="Pré-carregamento FlutterFlow"></iframe>
 
     <script src="script.js"></script>
 </body>
