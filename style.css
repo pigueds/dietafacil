@@ -116,3 +116,62 @@ body {
         font-size: 1.2rem;
     }
 }
+
+/* ===== NEW STYLES ===== */
+.benefits-box {
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 0 auto 25px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.benefit-icon {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    min-width: 30px;
+    text-align: center;
+}
+
+.benefit-text {
+    line-height: 1.4;
+}
+
+.cta-text {
+    font-size: 1.1rem;
+    margin: 25px 0;
+    color: #555;
+    line-height: 1.5;
+}
+
+.small-text {
+    font-size: 0.85rem;
+    color: #777;
+    margin-top: 20px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+    .benefits-box {
+        padding: 15px;
+    }
+    
+    .benefit-item {
+        font-size: 0.95rem;
+    }
+    
+    .cta-text {
+        font-size: 1rem;
+        margin: 20px 0;
+    }
+}
